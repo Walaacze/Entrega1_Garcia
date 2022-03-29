@@ -1,5 +1,5 @@
 from django.shortcuts import redirect, render
-from .models import Administrativo, Freelance, Permanente
+from .models import Permanente, Freelance, Administrativo
 from .forms import PermanenteFormulario, FreelanceFormulario, AdministrativoFormulario, PermanenteBuscar, FreelanceBuscar, AdministrativoBuscar
 
 def crear_permanente(request):
@@ -28,8 +28,7 @@ def crear_freelance(request):
     form = FreelanceFormulario()
     return render(request, 'profesionales/crear_freelance.html', {'form':form})
 
-def crear_administrativo(request):
-    
+def crear_administrativo(request):   
     if request.method == 'POST':
         form = AdministrativoFormulario(request.POST)
         if form.is_valid():

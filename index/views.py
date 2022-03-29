@@ -6,8 +6,6 @@ def index(request):
 
 def plantilla(request):
     datos = {
-        'lista': ['primero', 'segundo', 'tercero'],
-        'nombre':'Pol',
-        'apellido': 'Garcia'
+        'lista': ['administrativo', 'permanente', 'freelance'],
     }
     return render(request, 'index/plantilla.html', datos)
